@@ -7,7 +7,7 @@ body {
     transition: .4s;
 }
   
-.input {
+.toggle {
     visibility: hidden;
 }
   
@@ -15,12 +15,12 @@ body {
     position: absolute;
     width: 80px;
     height: 40px;
-    background-color: lightgray;
+    background-color: black;
     border-radius: 20px;
     cursor: pointer;
 }
   
-.circle {
+.round {
     width: 34px;
     background-color: white;
     height: 34px;
@@ -31,11 +31,11 @@ body {
     animation: toggleOff 0.4s linear forwards;
 }
   
-.input:checked + .label {
+.toggle:checked + .label {
     background-color: white;
 }
   
-.input:checked + .label .circle {
+.toggle:checked + .label .round {
     animation: toggleOn 0.4s linear forwards;
     background-color: black;
 }

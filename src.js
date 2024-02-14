@@ -1,24 +1,16 @@
-const inputEl   = document.querySelector(".input");
+const toggleEl = document.querySelector(".toggle");
 
-const bodyEl    = document.querySelector("body");
+const bodyEl   = document.querySelector("body");
 
-inputEl.checked = JSON.parse(localStorage.getItem("mode"));
+toggleEl.checked = JSON.parse(localStorage.getItem("theme"));
 
 updateBody();
 
 function updateBody() {
-    if (inputEl.checked) {
-        bodyEl.style.background = "black";
-    } else {
-        bodyEl.style.background = "white";
-    }
+    bodyEl.style.background = toggleEl.checked ? "black" : "white";
 }
 
-inputEl.addEventListener("input", () => {
+toggleEl.addEventListener("input", () => {
     updateBody();
-    updateLocalStorage();
+    localStorage.setItem("theme", JSON.stringify(toggleEl.checked));
 });
-
-function updateLocalStorage() {
-    localStorage.setItem("mode", JSON.stringify(inputEl.checked));
-}
